@@ -2,6 +2,8 @@
 
 set -e
 
+echo "Test"
+
 #Making sure we have the token
 if [[ -z "$GITHUB_TOKEN" ]]; then
   echo "Set the GITHUB_TOKEN env variable."
@@ -38,6 +40,8 @@ RESPONSE=$(curl -s \
 #Extracting Title & Lables
 title=$(jq ".title" <<< "$RESPONSE")
 labels=$(jq ".labels" <<< "$RESPONSE")
+
+echo $labels
 
 #Block if suspect words are found.
 #Todo - words to be provided as action input.
