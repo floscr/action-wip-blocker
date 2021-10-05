@@ -41,6 +41,7 @@ RESPONSE=$(curl -s \
 title=$(jq ".title" <<< "$RESPONSE")
 labels=$(jq ".labels" <<< "$RESPONSE")
 
+echo $RESPONSE
 echo $labels
 
 #Block if suspect words are found.
