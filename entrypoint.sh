@@ -27,6 +27,11 @@ AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 #Extracting pull request number
 number=$(jq -r ".pull_request.number" "$GITHUB_EVENT_PATH")
 
+echo "https://api.github.com/repos/${GITHUB_REPOSITORY}/pull/${number}"
+echo $AUTH_HEADER
+echo $API_HEADER
+echo $GITHUB_EVENT_PATH
+
 #Calling the PR API to fetch latest info
 #If the action had intially failed due to addition of a label or editing the title, it should pass if manually re-triggered
 #later on, so we need to always work on the latest information.
