@@ -39,7 +39,7 @@ RESPONSE=$(curl -s \
     -H "Content-Type: application/json" \
     -H "${AUTH_HEADER}" \
     -H "${API_HEADER}" \
-    "https://api.github.com/repos/${GITHUB_REPOSITORY}/pull/${number}")
+    "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${number}")
 
 
 #Extracting Title & Lables
